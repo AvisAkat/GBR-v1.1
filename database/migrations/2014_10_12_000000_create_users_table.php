@@ -13,15 +13,15 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->uuid('user_id')->primary();
-            $table->foreignUuid('role_id')->references('role_id')->on('roles')->onUpdate('cascade')->onDelete('cascade');
+            $table->enum('role',['user','agent','admin'])->default('user');
             $table->string('first_name');
             $table->string('last_name');
             $table->string('email')->unique();
-            $table->string('address');
-            $table->string('phone_number');
+            $table->string('address')->nullable();
+            $table->string('phone_number')->unique();
             $table->string('password');
-            $table->string('gender');
-            $table->date('date_of_birth');
+            $table->string('gender')->nullable();
+            $table->date('date_of_birth')->nullable();
             $table->timestamps();
         });
     }
