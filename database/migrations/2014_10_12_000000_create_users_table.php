@@ -13,7 +13,6 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->uuid('user_id')->primary();
-            $table->foreignUuiduuid('role_id');
             $table->foreignUuid('role_id')->references('role_id')->on('roles')->onUpdate('cascade')->onDelete('cascade');
             $table->string('first_name');
             $table->string('last_name');
