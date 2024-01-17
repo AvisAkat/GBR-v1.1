@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('passengers', function (Blueprint $table) {
             $table->uuid('passenger_id')->primary();
             $table->foreignUuid('ticket_id')->references('ticket_id')->on('tickets')->onUpdate('cascade')->onDelete('cascade');
-            $table->foreignUuid('travel_id')->references('ticket_id')->on('travels')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignUuid('travel_id')->references('travel_id')->on('travels')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
     }
