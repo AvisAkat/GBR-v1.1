@@ -4,6 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
+
 return new class extends Migration
 {
     /**
@@ -17,11 +18,12 @@ return new class extends Migration
             $table->string('first_name');
             $table->string('last_name');
             $table->string('email')->unique();
-            $table->string('address')->nullable();
+            $table->Text('address')->nullable();
             $table->string('phone_number')->unique();
             $table->string('password');
             $table->string('gender')->nullable();
             $table->date('date_of_birth')->nullable();
+            $table->rememberToken();
             $table->timestamps();
         });
     }

@@ -12,10 +12,12 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('routes', function (Blueprint $table) {
-            $table->uuid('route_id')->primary();
+            $table->id();
             $table->string('route_name');
-            $table->foreignUuid('start_terminal_id')->references('terminal_id')->on('terminals')->onUpdate('cascade')->onDelete('cascade');
-            $table->foreignUuid('end_terminal_id')->references('terminal_id')->on('terminals')->onUpdate('cascade')->onDelete('cascade');
+            $table->unsignedBigInteger('start_terminal_id');
+            $table->unsignedBigInteger('end_terminal_id');
+            $table->foreign('start_terminal_id')->references('id')->on('terminals')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('end_terminal_id')->references('id')->on('terminals')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
     }
