@@ -1,47 +1,86 @@
+{{-- <x-guest-layout>
+    <div class="p-4 mt-5 mb-5 me-3" style="">
+        <center>
+        <div class="col-6" style="align-content: center;text-align: center;padding-top: 10rem;">
+            <a href="/">
+                <img src="buslogo.png" class="" style="width: 15rem;" />
+            </a>
+        </div>
+        
+            <div class="register_form col-6 mb-5" style="margin-top: -40px;">
+                <form class="row g-3 p-5 ps-3 pe-3 shadow" action="" method="" style="width: 23rem;">
+                    <h1 class="text-primary mb-4 text-center">Login</h1>
+                    <div class="col-md-12" style="text-align: left;">
+                        <label for="input_email_phone" class="form-label">Email/Phone</label>
+                        <input type="text" name="email_phone" class="form-control border-primary" id="input_email_phone" value="{{old('email_phone')}}">
+                    </div>
+                    
+                    <div class="col-md-12 mt-4" style="text-align: left;">
+                        <label for="input_Password" class="form-label">Password</label>
+                        <input type="password" name="password" class="form-control border-primary" id="input_Password">
+                    </div>
+                    
+                    <div class="col-12 mt-5">
+                    <button type="submit" class="btn btn-primary w-100">Sign in</button>
+                    </div>
+                </form>
+            
+            
+        
+        
+            </div>
+        </center>
+    </div>
+</x-guest-layout> --}}
+
 <x-guest-layout>
-    <!-- Session Status -->
-    <x-auth-session-status class="mb-4" :status="session('status')" />
 
-    <form method="POST" action="{{ route('login') }}">
-        @csrf
-
-        <!-- Email Address -->
-        <div>
-            <x-input-label for="email" :value="__('Email')" />
-            <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" />
-            <x-input-error :messages="$errors->get('email')" class="mt-2" />
+    <style>
+        .signbutt{
+            background-color: #FF7A00;
+            border: none;
+            color: blue;
+            
+        }
+        .signbutt:hover{
+            background-color: #fc7400;
+            
+        }
+    </style>
+    <div class="row p-4">
+        
+        <div class="col-6" style="align-content: center;text-align: center;padding-top: 10rem;">
+            <a href="/">
+                <img src="buslogo.png" class="" style="width: 30rem;" />
+            </a>
         </div>
-
-        <!-- Password -->
-        <div class="mt-4">
-            <x-input-label for="password" :value="__('Password')" />
-
-            <x-text-input id="password" class="block mt-1 w-full"
-                            type="password"
-                            name="password"
-                            required autocomplete="current-password" />
-
-            <x-input-error :messages="$errors->get('password')" class="mt-2" />
+        
+        <div class="register_form col-6 mb-5" style="margin-top: 40px;">
+            <form class="row g-3 p-5 ps-3 pe-3 shadow" action="" method="" style="width: 23rem;">
+                <h1 class="text-primary mb-4 text-center">Login</h1>
+                <div class="col-md-12" style="text-align: left;">
+                    <label for="login" class="form-label">Email/Phone</label>
+                    <input type="text" name="login" class="form-control border-primary" id="login" value="{{old('login')}}">
+                </div>
+                
+                <div class="col-md-12 mt-4" style="text-align: left;">
+                    <label for="input_Password" class="form-label">Password</label>
+                    <input type="password" name="password" class="form-control border-primary" id="input_Password">
+                </div>
+                <div class="col-md-12 mt-4" style="text-align: left;">
+                    Don't have an account? <a href="#" style="color: #0155C2;text-decoration: none;">Sign up</a>
+                </div>
+                
+                <div class="col-12 mt-5">
+                <button type="submit" class="btn btn-primary w-100 signbutt">Sign in</button>
+                </div>
+            </form>
+        
+        
+    
+    
         </div>
-
-        <!-- Remember Me -->
-        <div class="block mt-4">
-            <label for="remember_me" class="inline-flex items-center">
-                <input id="remember_me" type="checkbox" class="rounded dark:bg-gray-900 border-gray-300 dark:border-gray-700 text-indigo-600 shadow-sm focus:ring-indigo-500 dark:focus:ring-indigo-600 dark:focus:ring-offset-gray-800" name="remember">
-                <span class="ms-2 text-sm text-gray-600 dark:text-gray-400">{{ __('Remember me') }}</span>
-            </label>
-        </div>
-
-        <div class="flex items-center justify-end mt-4">
-            @if (Route::has('password.request'))
-                <a class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800" href="{{ route('password.request') }}">
-                    {{ __('Forgot your password?') }}
-                </a>
-            @endif
-
-            <x-primary-button class="ms-3">
-                {{ __('Log in') }}
-            </x-primary-button>
-        </div>
-    </form>
+       
+    </div>
 </x-guest-layout>
+

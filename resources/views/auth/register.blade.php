@@ -1,52 +1,95 @@
 <x-guest-layout>
-    <form method="POST" action="{{ route('register') }}">
-        @csrf
 
-        <!-- Name -->
-        <div>
-            <x-input-label for="name" :value="__('Name')" />
-            <x-text-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
-            <x-input-error :messages="$errors->get('name')" class="mt-2" />
-        </div>
-
-        <!-- Email Address -->
-        <div class="mt-4">
-            <x-input-label for="email" :value="__('Email')" />
-            <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autocomplete="username" />
-            <x-input-error :messages="$errors->get('email')" class="mt-2" />
-        </div>
-
-        <!-- Password -->
-        <div class="mt-4">
-            <x-input-label for="password" :value="__('Password')" />
-
-            <x-text-input id="password" class="block mt-1 w-full"
-                            type="password"
-                            name="password"
-                            required autocomplete="new-password" />
-
-            <x-input-error :messages="$errors->get('password')" class="mt-2" />
-        </div>
-
-        <!-- Confirm Password -->
-        <div class="mt-4">
-            <x-input-label for="password_confirmation" :value="__('Confirm Password')" />
-
-            <x-text-input id="password_confirmation" class="block mt-1 w-full"
-                            type="password"
-                            name="password_confirmation" required autocomplete="new-password" />
-
-            <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
-        </div>
-
-        <div class="flex items-center justify-end mt-4">
-            <a class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800" href="{{ route('login') }}">
-                {{ __('Already registered?') }}
+    <style>
+        .signbutt{
+            background-color: #FF7A00;
+            border: none;
+            color: blue;
+            
+        }
+        .signbutt:hover{
+            background-color: #fc7400;
+            
+        }
+    </style>
+    <div class="row p-4">
+        <div class="col-6" style="align-content: center;text-align: center;padding-top: 10rem;">
+            <a href="/">
+                <img src="buslogo.png" class="" style="width: 45rem;" />
             </a>
-
-            <x-primary-button class="ms-4">
-                {{ __('Register') }}
-            </x-primary-button>
         </div>
-    </form>
+        <div class="register_form col-6 shadow">
+            <form class="row g-3 p-5" action="" method="">
+                <h1 class="mb-4" style="color: #0155C2;text-align: center;">Register Form</h1>
+                <div class="col-md-6">
+                    <label for="input_first_name" class="form-label">First Name</label>
+                    <input type="text" name="first_name" class="form-control border-primary" id="input_first_name" placeholder="John" value="{{old('first_name')}}">
+                </div>
+                <div class="col-md-6">
+                    <label for="input_last_name" class="form-label">Last Name</label>
+                    <input type="text" name="last_name" class="form-control border-primary" id="input_last_name" placeholder="Smith" value="{{old('last_name')}}">
+                </div>
+                <div class="col-md-12">
+                    <label for="input_email" class="form-label">Email</label>
+                    <input type="email" name="email" class="form-control border-primary" id="input_email" placeholder="johnsmith@example.com" value="{{old('email')}}">
+                </div>
+                <div class="col-12">
+                    <label for="input_Address" class="form-label">Address</label>
+                    <input type="text" name="address" class="form-control border-primary" id="input_Address" placeholder="1234 Main St" value="{{old('address')}}">
+                </div>
+               
+                <div class="col-md-4">
+                    <label for="input_phone" class="form-label">Phone Number</label>
+                    
+                    <div class="input-group">
+                        <span class="input-group-text border-primary" id="basic-addon1" >+233</span>
+                        <input id="input_phone" type="text" name="phone" class="form-control border-primary" placeholder="User's Contact.." aria-label="Username" aria-describedby="basic-addon1" value="{{old('phone')}}">
+                        
+                    </div>
+                    
+                </div>
+                <div class="col-md-4" style="text-align: center;">
+                    <div class="form-group " >
+                        <label class="form-label" style="text-align: left;">Gender</label>
+                        <br />
+                    
+                        <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                            <input type="radio" class="btn-check" name="gender" id="input_gender1" autocomplete="off" value="male">
+                            <label class="btn btn-outline-primary" for="input_gender1" style="border-top-left-radius: 0.5rem;border-bottom-left-radius: 0.5rem">Male</label>
+                        
+                            <input type="radio" class="btn-check" name="gender" id="input_gender2" autocomplete="off" value="female">
+                            <label class="btn btn-outline-primary" for="input_gender2" style="border-top-right-radius: 0.5rem;border-bottom-right-radius: 0.5rem">Female</label>
+                        
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <label for="input_dob" class="form-label">Date Of Birth</label>
+                    <input type="date" name="date_of_birth" class="form-control border-primary" id="input_dob" placeholder="" value="{{old('date_of_birth')}}">
+                </div>
+                
+                <div class="col-md-6 mt-4">
+                    <label for="input_Password" class="form-label">Password</label>
+                    <input type="password" name="password" class="form-control border-primary" id="input_Password">
+                </div>
+                <div class="col-md-6 mt-4">
+                    <label for="input_Password" class="form-label">Confirm Password</label>
+                    <input type="password" name="password_confirmation" class="form-control border-primary" id="input_Password4">
+                </div>
+                <div class="col-md-12 mt-4" style="text-align: left;">
+                    Already have an account? <a href="#" style="color: #0155C2;text-decoration: none;">Sign In</a>
+                </div>
+                
+                
+                <div class="col-12 mt-5">
+                   <button type="submit" class="btn btn-primary w-100 signbutt" style="">Sign in</button>
+                </div>
+            </form>
+        
+        
+        
+        
+        </div>
+    </div>
 </x-guest-layout>
