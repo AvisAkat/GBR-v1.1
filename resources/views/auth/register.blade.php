@@ -1,4 +1,17 @@
 <x-guest-layout>
+
+    <style>
+        .signbutt{
+            background-color: #FF7A00;
+            border: none;
+            color: blue;
+            
+        }
+        .signbutt:hover{
+            background-color: #fc7400;
+            
+        }
+    </style>
     <div class="row p-4">
         <div class="col-6" style="align-content: center;text-align: center;padding-top: 10rem;">
             <a href="/">
@@ -7,7 +20,7 @@
         </div>
         <div class="register_form col-6 shadow">
             <form class="row g-3 p-5" action="" method="">
-                <h1 class="text-primary mb-4">Register</h1>
+                <h1 class="mb-4" style="color: #0155C2;text-align: center;">Register Form</h1>
                 <div class="col-md-6">
                     <label for="input_first_name" class="form-label">First Name</label>
                     <input type="text" name="first_name" class="form-control border-primary" id="input_first_name" placeholder="John" value="{{old('first_name')}}">
@@ -64,10 +77,13 @@
                     <label for="input_Password" class="form-label">Confirm Password</label>
                     <input type="password" name="password_confirmation" class="form-control border-primary" id="input_Password4">
                 </div>
+                <div class="col-md-12 mt-4" style="text-align: left;">
+                    Already have an account? <a href="#" style="color: #0155C2;text-decoration: none;">Sign In</a>
+                </div>
                 
                 
                 <div class="col-12 mt-5">
-                   <button type="submit" class="btn btn-primary w-100">Sign in</button>
+                   <button type="submit" class="btn btn-primary w-100 signbutt" style="">Sign in</button>
                 </div>
             </form>
         
