@@ -12,8 +12,9 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('drivers', function (Blueprint $table) {
-        $table->uuid('driver_id')->primary();
+        $table->id();
         $table->string('licence_number');
+        // $table->unsignedBigInteger('user_id');
         $table->foreignUuid('user_id')->references('user_id')->on('users')->onUpdate('cascade')->onDelete('cascade');
         $table->timestamps();
 

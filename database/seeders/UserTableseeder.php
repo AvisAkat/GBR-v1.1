@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Eloquent\Concerns\HasUuids;
+use Ramsey\Uuid\Uuid;
 
 class UserTableseeder extends Seeder
 {
@@ -18,7 +19,8 @@ class UserTableseeder extends Seeder
     {
         DB::table('users')->insert([
             //Admin
-            [
+            [  
+                 'user_id' => Uuid::uuid4()->toString(),
                 'role' => 'admin',
                 'first_name' => 'Joel',
                 'last_name'=> 'Manny',
@@ -27,11 +29,12 @@ class UserTableseeder extends Seeder
                 'address'=>'kofi-annan street',
                 'password'=>Hash::make('password'),
                 'gender'=>'Male',
-                'date_of_birth'=>'03-02-2000'   
+                'date_of_birth'=>'2000-02-03'   
             ],
 
             //Agent
             [
+                'user_id' => Uuid::uuid4()->toString(),
                 'role' => 'agent',
                 'first_name' => 'Juliet',
                 'last_name'=> 'Barbie',
@@ -40,11 +43,12 @@ class UserTableseeder extends Seeder
                 'address'=>'kofi-annan street',
                 'password'=>Hash::make('password'),
                 'gender'=>'Female',
-                'date_of_birth'=>'03-12-2002'   
+                'date_of_birth'=>'2002-12-03'   
             ],
 
             //User
             [
+                'user_id' => Uuid::uuid4()->toString(),
                 'role' => 'user',
                 'first_name' => 'Davis',
                 'last_name'=> 'Kelly',
@@ -53,7 +57,7 @@ class UserTableseeder extends Seeder
                 'address'=>'kofi-annan street',
                 'password'=>Hash::make('password'),
                 'gender'=>'Male',
-                'date_of_birth'=>'01-01-2001'   
+                'date_of_birth'=>'2001-01-01'   
             ]
         ]);
     }

@@ -12,7 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('staffs', function (Blueprint $table) {
-            $table->uuid('staff_id')->primary();
+            $table->id();
+            // $table->unsignedBigInteger('user_id');
             $table->foreignUuid('user_id')->references('user_id')->on('users')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });

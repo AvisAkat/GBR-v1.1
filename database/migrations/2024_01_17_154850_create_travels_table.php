@@ -12,14 +12,17 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('travels', function (Blueprint $table) {
-            $table->uuid('travel_id')->primary();
+            $table->id();
             $table->string('route_name');
-            $table->foreignUuid('driver_id')->references('driver_id')->on('drivers')->onUpdate('cascade')->onDelete('cascade');
-            $table->foreignUuid('bus_id')->references('bus_id')->on('buses')->onUpdate('cascade')->onDelete('cascade');
+            $table->unsignedBigInteger('driver_id');
+            $table->foreign('driver_id')->references('id')->on('drivers')->onUpdate('cascade')->onDelete('cascade');
+            $table->unsignedBigInteger('bus_id');
+            $table->foreign('bus_id')->references('id')->on('buses')->onUpdate('cascade')->onDelete('cascade');
             $table->dateTime('departure_datetime');
             $table->dateTime('arrival_datetime');
             $table->string('travel_status');
-            $table->foreignUuid('route_id')->references('route_id')->on('routes')->onUpdate('cascade')->onDelete('cascade');
+            $table->unsignedBigInteger('route_id');
+            $table->foreign('route_id')->references('id')->on('routes')->onUpdate('cascade')->onDelete('cascade');
             $table->dateTime('estimated_time_of_arrival');
             
             $table->timestamps();
