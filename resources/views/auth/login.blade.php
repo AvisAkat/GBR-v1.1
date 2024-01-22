@@ -59,8 +59,8 @@
             <form class="row g-3 p-5 ps-3 pe-3 shadow" action="" method="" style="width: 23rem;">
                 <h1 class="text-primary mb-4 text-center">Login</h1>
                 <div class="col-md-12" style="text-align: left;">
-                    <label for="input_email_phone" class="form-label">Email/Phone</label>
-                    <input type="text" name="email_phone" class="form-control border-primary" id="input_email_phone" value="{{old('email_phone')}}">
+                    <label for="login" class="form-label">Email/Phone</label>
+                    <input type="text" name="login" class="form-control border-primary" id="login" value="{{old('email_phone')}}">
                 </div>
                 
                 <div class="col-md-12 mt-4" style="text-align: left;">
