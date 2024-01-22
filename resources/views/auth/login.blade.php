@@ -60,7 +60,7 @@
                 <h1 class="text-primary mb-4 text-center">Login</h1>
                 <div class="col-md-12" style="text-align: left;">
                     <label for="login" class="form-label">Email/Phone</label>
-                    <input type="text" name="login" class="form-control border-primary" id="login" value="{{old('email_phone')}}">
+                    <input type="text" name="login" class="form-control border-primary" id="login" value="{{old('login')}}">
                 </div>
                 
                 <div class="col-md-12 mt-4" style="text-align: left;">
