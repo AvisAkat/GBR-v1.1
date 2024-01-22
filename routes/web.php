@@ -34,3 +34,4 @@ require __DIR__.'/auth.php';
 Route::get('/admin/dashboard',[HomeController::class, 'AdminDashboard']);
 
 Route::get('/agent/dashboard',[HomeController::class, 'AgentDashboard']);
+Route::get('/user/dashboard',[HomeController::class, 'UserDashboard']);

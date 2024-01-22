@@ -13,4 +13,7 @@ class HomeController extends Controller
     public function AgentDashboard(){
         return view('agent.dashboard');
     }
+    public function UserDashboard(){
+        return view('user.dashboard');
+    }
 }
