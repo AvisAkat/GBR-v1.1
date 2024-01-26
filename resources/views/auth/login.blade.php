@@ -51,12 +51,13 @@
         
         <div class="col-6" style="align-content: center;text-align: center;padding-top: 10rem;">
             <a href="/">
-                <img src="buslogo.png" class="" style="width: 30rem;" />
+                <img src="buslogo.png" class="" style="width: 35rem;" />
             </a>
         </div>
         
         <div class="register_form col-6 mb-5" style="margin-top: 40px;">
-            <form class="row g-3 p-5 ps-3 pe-3 shadow" action="" method="" style="width: 23rem;">
+            <form class="row g-3 p-5 ps-3 pe-3 shadow" action="{{ route('login') }}" method="POST" style="width: 23rem;">
+                @csrf
                 <h1 class="text-primary mb-4 text-center">Login</h1>
                 <div class="col-md-12" style="text-align: left;">
                     <label for="login" class="form-label">Email/Phone</label>
