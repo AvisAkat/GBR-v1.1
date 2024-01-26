@@ -6,8 +6,10 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 
-class homeController extends Controller
+class HomeController extends Controller
 {
+    //
+
  
     public function index()
     {
@@ -35,15 +37,9 @@ class homeController extends Controller
         }
     }
  
- 
-    public function AdminDashboard(){
-        return view('admin.dashboard');
-    }
 
-    public function AgentDashboard(){
-        return view('agent.dashboard');
-    }
     public function UserDashboard(){
         return view('user.dashboard');
     }
 }
+

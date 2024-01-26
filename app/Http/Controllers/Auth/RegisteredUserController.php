@@ -31,7 +31,7 @@ class RegisteredUserController extends Controller
      */
     public function store(Request $request): RedirectResponse
     {
-        // dd(Uuid::uuid4()->toString());
+        
         
         $request->validate([
             
@@ -44,6 +44,8 @@ class RegisteredUserController extends Controller
             'date_of_birth' => ['date', "nullable"],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
+
+        dd(Uuid::uuid4()->toString());
 
         $user = User::create([
             'user_id' => Uuid::uuid4()->toString(),
@@ -61,6 +63,6 @@ class RegisteredUserController extends Controller
 
         Auth::login($user);
 
-        return redirect(RouteServiceProvider::HOME);
+        return redirect(RouteServiceProvider::REGISTER);
     }
 }
