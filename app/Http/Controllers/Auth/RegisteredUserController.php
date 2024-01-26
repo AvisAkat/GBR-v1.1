@@ -45,7 +45,7 @@ class RegisteredUserController extends Controller
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
 
-        dd(Uuid::uuid4()->toString());
+        // dd(Uuid::uuid4()->toString());
 
         $user = User::create([
             'user_id' => Uuid::uuid4()->toString(),
