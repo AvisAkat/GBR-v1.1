@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
 use Illuminate\View\View;
+use Ramsey\Uuid\Uuid;
 
 class RegisteredUserController extends Controller
 {
@@ -30,8 +31,10 @@ class RegisteredUserController extends Controller
      */
     public function store(Request $request): RedirectResponse
     {
+        // dd(Uuid::uuid4()->toString());
         
         $request->validate([
+            
             'first_name' => ['required', 'string', 'max:255'],
             'last_name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:'.User::class],
@@ -43,11 +46,12 @@ class RegisteredUserController extends Controller
         ]);
 
         $user = User::create([
+            'user_id' => Uuid::uuid4()->toString(),
             'first_name' => $request->first_name,
             'last_name' => $request->last_name,
             'email' => $request->email,
             'address' => $request->address,
-            'phone' => $request->phone,
+            'phone_number' => $request->phone,
             'gender' => $request->gender,
             'date_of_birth' => $request->date_of_birth,
             'password' => Hash::make($request->password),
