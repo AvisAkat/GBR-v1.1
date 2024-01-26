@@ -19,7 +19,8 @@
             </a>
         </div>
         <div class="register_form col-6 shadow">
-            <form class="row g-3 p-5" action="" method="">
+            <form class="row g-3 p-5" action="{{ route('register') }}" method="POST">
+                @csrf
                 <h1 class="mb-4" style="color: #0155C2;text-align: center;">Register Form</h1>
                 <div class="col-md-6">
                     <label for="input_first_name" class="form-label">First Name</label>
@@ -43,7 +44,7 @@
                     
                     <div class="input-group">
                         <span class="input-group-text border-primary" id="basic-addon1" >+233</span>
-                        <input id="input_phone" type="text" name="phone" class="form-control border-primary" placeholder="User's Contact.." aria-label="Username" aria-describedby="basic-addon1" value="{{old('phone')}}">
+                        <input id="input_phone" type="text" name="phone" maxlength="9" class="form-control border-primary" placeholder="User's Contact.." aria-label="Username" aria-describedby="basic-addon1" value="{{old('phone')}}">
                         
                     </div>
                     
@@ -83,7 +84,7 @@
                 
                 
                 <div class="col-12 mt-5">
-                   <button type="submit" class="btn btn-primary w-100 signbutt" style="">Sign in</button>
+                   <button type="submit" class="btn btn-primary w-100 signbutt" style="">Sign up</button>
                 </div>
             </form>
         
