@@ -1,6 +1,32 @@
 <x-guest-layout>
 
     <style>
+
+        .buslogo2-container{
+            display: none;
+        }
+
+        .buslogo1-container{
+            align-content: center;
+            text-align: center;
+            padding-top: 14rem;
+        }
+
+        .register_form form{
+                padding: 2rem;
+                padding-top: 3rem;
+            }
+
+        .buslogo1{
+            width: 48rem;
+            transition: 1s ease-in-out;
+        }
+
+        .buslogo2{
+            transition: 1s ease-in-out;
+        }
+
+        
         .signbutt{
             background-color: #FF7A00;
             border: none;
@@ -11,15 +37,111 @@
             background-color: #fc7400;
             
         }
+
+        @media (max-width: 1240px){
+            .buslogo1{
+                width: 35rem;
+            }
+        }
+
+        @media (max-width: 1180px){
+            .buslogo1{
+                width: 32rem;
+            }
+        }
+
+        @media (max-width: 1112px){
+            .buslogo1{
+                width: 29rem;
+            }
+        }
+
+        @media (max-width: 1030px){
+            .buslogo1-container{
+                display: none;
+            }
+
+            .register_form{
+                width: 70%;
+                margin-left: 15%;
+            }
+
+            .buslogo2-container{
+                display: inline;
+                text-align: center;
+                width: 70%;
+                margin-left: 15%;
+            }
+
+            .buslogo2{
+                width: 15rem;
+                margin-bottom: -2rem;
+            }
+        }
+
+        @media (max-width: 870px){
+           
+
+            .register_form{
+                width: 80%;
+                margin-left: 10%;
+            }
+            
+        }
+
+        @media (max-width: 767px){
+            
+            .register_form form{
+              
+                text-align: left;
+                
+            }
+            
+        }
+
+        @media (max-width: 470px){
+            
+            .register_form form{
+                padding-left: 5px;
+                padding-right: 5px;
+                
+            }
+
+            .register_form{
+                width: 90%;
+                margin-left: 5%;
+            }
+
+            .buslogo2-container{
+                display: inline;
+                text-align: center;
+                width: 90%;
+                margin-left: 5%;
+            }
+
+            .buslogo2{
+                width: 10rem;
+                margin-bottom: -2rem;
+                transition: 1s ease-in-out;
+            }
+            
+        }
+
+
     </style>
     <div class="row p-4">
-        <div class="col-6" style="align-content: center;text-align: center;padding-top: 10rem;">
+        <div class="buslogo1-container col-6" style="">
             <a href="/">
-                <img src="buslogo.png" class="" style="width: 45rem;" />
+                <img src="buslogo.png" class="buslogo1" style="" />
+            </a>
+        </div>
+        <div class="buslogo2-container col-6" style="">
+            <a href="/">
+                <img src="buslogo.png" class="buslogo2" style="" />
             </a>
         </div>
         <div class="register_form col-6 shadow">
-            <form class="row g-3 p-5" action="" method="">
+            <form class="row g-3" action="" method="">
                 <h1 class="mb-4" style="color: #0155C2;text-align: center;">Register Form</h1>
                 <div class="col-md-6">
                     <label for="input_first_name" class="form-label">First Name</label>
@@ -83,7 +205,7 @@
                 
                 
                 <div class="col-12 mt-5">
-                   <button type="submit" class="btn btn-primary w-100 signbutt" style="">Sign in</button>
+                   <button type="submit" class="btn btn-primary w-100 signbutt" style="">Sign Up</button>
                 </div>
             </form>
         
