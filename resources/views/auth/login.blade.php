@@ -1,37 +1,4 @@
-{{-- <x-guest-layout>
-    <div class="p-4 mt-5 mb-5 me-3" style="">
-        <center>
-        <div class="col-6" style="align-content: center;text-align: center;padding-top: 10rem;">
-            <a href="/">
-                <img src="buslogo.png" class="" style="width: 15rem;" />
-            </a>
-        </div>
-        
-            <div class="register_form col-6 mb-5" style="margin-top: -40px;">
-                <form class="row g-3 p-5 ps-3 pe-3 shadow" action="" method="" style="width: 23rem;">
-                    <h1 class="text-primary mb-4 text-center">Login</h1>
-                    <div class="col-md-12" style="text-align: left;">
-                        <label for="input_email_phone" class="form-label">Email/Phone</label>
-                        <input type="text" name="email_phone" class="form-control border-primary" id="input_email_phone" value="{{old('email_phone')}}">
-                    </div>
-                    
-                    <div class="col-md-12 mt-4" style="text-align: left;">
-                        <label for="input_Password" class="form-label">Password</label>
-                        <input type="password" name="password" class="form-control border-primary" id="input_Password">
-                    </div>
-                    
-                    <div class="col-12 mt-5">
-                    <button type="submit" class="btn btn-primary w-100">Sign in</button>
-                    </div>
-                </form>
-            
-            
-        
-        
-            </div>
-        </center>
-    </div>
-</x-guest-layout> --}}
+
 
 <x-guest-layout>
 
@@ -56,7 +23,8 @@
             }
 
         .buslogo1{
-            width: 48rem;
+            padding-top: 1rem;
+            width: 52rem;
             transition: 1s ease-in-out;
         }
 
