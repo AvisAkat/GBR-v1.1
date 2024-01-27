@@ -43,6 +43,16 @@ class RegisteredUserController extends Controller
             'gender' => ['string', 'max:6', 'lowercase', "nullable"],
             'date_of_birth' => ['date', "nullable"],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
+        ],
+        [],
+        [
+            'first_name' => 'First Name',
+            'last_name' => 'Last Name',
+            'phone' => 'Phone Number',
+            'email' => 'Email',
+            'address' => 'Address',
+            'gender' => 'Gender',
+            'date_of_birth' => 'Date of Birth',
         ]);
 
         // dd(Uuid::uuid4()->toString());
