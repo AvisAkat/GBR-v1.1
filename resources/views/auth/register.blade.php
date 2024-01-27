@@ -18,12 +18,14 @@
             }
 
         .buslogo1{
-            width: 48rem;
+            width: 100%;
             transition: 1s ease-in-out;
         }
 
         .buslogo2{
             transition: 1s ease-in-out;
+            width: 50%;
+            margin-bottom: -2rem;
         }
 
         
@@ -38,23 +40,8 @@
             
         }
 
-        @media (max-width: 1240px){
-            .buslogo1{
-                width: 35rem;
-            }
-        }
-
-        @media (max-width: 1180px){
-            .buslogo1{
-                width: 32rem;
-            }
-        }
-
-        @media (max-width: 1112px){
-            .buslogo1{
-                width: 29rem;
-            }
-        }
+        
+        
 
         @media (max-width: 1030px){
             .buslogo1-container{
@@ -73,10 +60,6 @@
                 margin-left: 15%;
             }
 
-            .buslogo2{
-                width: 15rem;
-                margin-bottom: -2rem;
-            }
         }
 
         @media (max-width: 870px){
@@ -118,17 +101,12 @@
                 width: 90%;
                 margin-left: 5%;
             }
-
-            .buslogo2{
-                width: 10rem;
-                margin-bottom: -2rem;
-                transition: 1s ease-in-out;
-            }
             
         }
 
 
     </style>
+    
     <div class="row p-4">
         <div class="buslogo1-container col-6" style="">
             <a href="/">
@@ -143,16 +121,18 @@
         <div class="register_form col-6 shadow">
             <form class="row g-3" action="" method="">
                 <h1 class="mb-4" style="color: #0155C2;text-align: center;">Register Form</h1>
+                <h6 class="mb-2" style="color: #010912;text-align: left;">Fields Mark with <a style="color: red;">*</a> are mandatory.</h6>
+                <hr style="margin-top: 0%;"/>
                 <div class="col-md-6">
-                    <label for="input_first_name" class="form-label">First Name</label>
+                    <label for="input_first_name" class="form-label">First Name<a style="color: red;"> *</a></label>
                     <input type="text" name="first_name" class="form-control border-primary" id="input_first_name" placeholder="John" value="{{old('first_name')}}">
                 </div>
                 <div class="col-md-6">
-                    <label for="input_last_name" class="form-label">Last Name</label>
+                    <label for="input_last_name" class="form-label">Last Name<a style="color: red;"> *</a></label>
                     <input type="text" name="last_name" class="form-control border-primary" id="input_last_name" placeholder="Smith" value="{{old('last_name')}}">
                 </div>
                 <div class="col-md-12">
-                    <label for="input_email" class="form-label">Email</label>
+                    <label for="input_email" class="form-label">Email<a style="color: red;"> *</a></label>
                     <input type="email" name="email" class="form-control border-primary" id="input_email" placeholder="johnsmith@example.com" value="{{old('email')}}">
                 </div>
                 <div class="col-12">
@@ -161,7 +141,7 @@
                 </div>
                
                 <div class="col-md-4">
-                    <label for="input_phone" class="form-label">Phone Number</label>
+                    <label for="input_phone" class="form-label">Phone Number<a style="color: red;"> *</a></label>
                     
                     <div class="input-group">
                         <span class="input-group-text border-primary" id="basic-addon1" >+233</span>
@@ -192,15 +172,15 @@
                 </div>
                 
                 <div class="col-md-6 mt-4">
-                    <label for="input_Password" class="form-label">Password</label>
+                    <label for="input_Password" class="form-label">Password<a style="color: red;"> *</a></label>
                     <input type="password" name="password" class="form-control border-primary" id="input_Password">
                 </div>
                 <div class="col-md-6 mt-4">
-                    <label for="input_Password" class="form-label">Confirm Password</label>
+                    <label for="input_Password" class="form-label">Confirm Password<a style="color: red;"> *</a></label>
                     <input type="password" name="password_confirmation" class="form-control border-primary" id="input_Password4">
                 </div>
                 <div class="col-md-12 mt-4" style="text-align: left;">
-                    Already have an account? <a href="#" style="color: #0155C2;text-decoration: none;">Sign In</a>
+                    Already have an account? <a href="{{ route('login')}} " style="color: #0155C2;text-decoration: none;">Sign In</a>
                 </div>
                 
                 
