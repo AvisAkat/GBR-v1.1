@@ -155,14 +155,10 @@
                         <br />
                     
                         <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-                            <input type="radio" class="btn-check" name="gender" id="input_gender1" autocomplete="off" value="male"
-                            @if(old('gender') === 'male'){selected="selected"}@endif
-                            >
+                            <input type="radio" class="btn-check" name="gender" id="input_gender1" autocomplete="off" value="male">
                             <label class="btn btn-outline-primary" for="input_gender1" style="border-top-left-radius: 0.5rem;border-bottom-left-radius: 0.5rem">Male</label>
                         
-                            <input type="radio" class="btn-check" name="gender" id="input_gender2" autocomplete="off" value="female"
-                            @if(old('gender') === 'female'){selected="selected"}@endif
-                            >
+                            <input type="radio" class="btn-check" name="gender" id="input_gender2" autocomplete="off" value="female">
                             <label class="btn btn-outline-primary" for="input_gender2" style="border-top-right-radius: 0.5rem;border-bottom-right-radius: 0.5rem">Female</label>
                         
                         </div>
