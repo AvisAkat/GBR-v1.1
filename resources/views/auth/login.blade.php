@@ -180,7 +180,7 @@
                     <input type="password" name="password" class="form-control border-primary" id="input_Password">
                 </div>
                 <div class="col-md-12 mt-4" style="text-align: left;">
-                    Don't have an account? <a href="#" style="color: #0155C2;text-decoration: none;">Sign up</a>
+                    Don't have an account? <a href="{{ route('register') }}" style="color: #0155C2;text-decoration: none;">Sign up</a>
                 </div>
                 
                 <div class="col-12 mt-5">
