@@ -107,7 +107,7 @@
 
     </style>
     
-    <div class="row p-4">
+    <div class="row p-4" style="margin-top: 5rem;">
         <div class="buslogo1-container col-6" style="">
             <a href="/">
                 <img src="buslogo.png" class="buslogo1" style="" />
